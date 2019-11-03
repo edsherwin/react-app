@@ -18,7 +18,7 @@ COPY package.json /usr/src/app/
 COPY package-lock.json /usr/src/app/
 
 RUN npm install
-RUN npm audit --audit-level high
+RUN npm audit fix
 
 # Bundle app source
 COPY . /usr/src/app
