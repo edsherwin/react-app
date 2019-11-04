@@ -11,7 +11,7 @@ node {
     }
     stage('Build Docker'){
       if(env.BRANCH_NAME == 'master'){
-        sh 'docker build -t react-app --no-cache . '
+        sh 'docker build -t react-app'
       }
     }
     stage('Tag Docker'){
