@@ -14,7 +14,7 @@ node {
         sh 'docker build -t react-app --no-cache . '
       }
     }
-    stage('Tag Docker Build'){
+    stage('Tag Docker'){
       sh 'docker tag react-app localhost:5000/react-app'
     }
     stage('Clean Docker'){
