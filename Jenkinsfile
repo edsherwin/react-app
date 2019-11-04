@@ -24,6 +24,7 @@ node {
       if(env.BRANCH_NAME == 'master'){
         sh 'docker push localhost:5000/react-app'
         sh 'docker rmi -f react-app localhost:5000/react-app'
+        sh 'docker run -d -p 3000:3000 --name react-app localhost:5000/react-app:latest'
       }
     }
   }
