@@ -17,8 +17,8 @@ node {
     stage('Tag Docker Build'){
       sh 'docker tag react-app localhost:5000/react-app'
     }
-    stage('Clean Docker test'){
-      sh 'docker rmi react-test'
+    stage('Clean Docker'){
+      sh 'docker rmi react-app'
     }
     stage('Deploy'){
       if(env.BRANCH_NAME == 'master'){
