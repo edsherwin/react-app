@@ -1,5 +1,5 @@
 # Extending image
-FROM node:carbon
+FROM node:latest
 
 RUN apt-get update
 RUN apt-get upgrade -y
@@ -18,6 +18,7 @@ COPY package.json /usr/src/app/
 COPY package-lock.json /usr/src/app/
 
 RUN npm install
+RUN npm audit fix
 
 # Bundle app source
 COPY . /usr/src/app
