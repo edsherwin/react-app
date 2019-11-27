@@ -16,7 +16,7 @@ node {
       sh 'docker run -d -p 3000:3000 --name react-test react-test:latest'
     }
     stage('Clean Docker test'){
-      sh 'docker rmi react-test'
+      sh 'docker stop react-test'
     }
     stage('Deploy'){
       if(env.BRANCH_NAME == 'master'){
