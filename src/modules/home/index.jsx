@@ -7,6 +7,7 @@ export default () => (
     <h1>
       <a href="https://medium.com/@evheniybystrov/react-app-from-scratch-d694300d1631">
         Read more - This is the Ed...
+        CI/CD Setup
       </a>
     </h1>
   </Fragment>
