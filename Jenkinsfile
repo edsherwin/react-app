@@ -14,12 +14,12 @@ node {
     }
     stage('Docker test'){
       sh 'docker stop react-test'
-      sh 'docker remove react-test'
+      sh 'docker rm react-test'
       sh 'docker run -d -p 3000:3000 --name react-test react-test:latest'
     }
     stage('Clean Docker test'){
       sh 'docker stop react-test'
-      sh 'docker remove react-test'
+      sh 'docker rm react-test'
     }
     stage('Deploy'){
       if(env.BRANCH_NAME == 'master'){
