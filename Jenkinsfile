@@ -17,6 +17,7 @@ node {
     }
     stage('Clean Docker test'){
       sh 'docker stop react-test'
+      sh 'docker remove react-test'
     }
     stage('Deploy'){
       if(env.BRANCH_NAME == 'master'){
