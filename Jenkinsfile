@@ -13,6 +13,8 @@ node {
      sh 'docker build -t react-test -f Dockerfile --no-cache .'
     }
     stage('Docker test'){
+      sh 'docker stop react-test'
+      sh 'docker remove react-test'
       sh 'docker run -d -p 3000:3000 --name react-test react-test:latest'
     }
     stage('Clean Docker test'){
